@@ -58,5 +58,17 @@ button {
   width: 800px;
 }
 
+@media only screen and (max-width: 800px) {
+
+  #fields {
+    width: 90vw;
+    margin: 5px;
+  }
+
+
+
+
+}
+
 
 
