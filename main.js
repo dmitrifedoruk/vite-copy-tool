@@ -36,7 +36,7 @@ function addField(n) {
     const newDiv = document.createElement('div');
     newDiv.classList.add("inputContainer");
     newDiv.innerHTML =
-        `    <input type="text" value="Hello World" id="myInput${n.toString()}">
+        `    <input type="text" placeholder="Hello World" id="myInput${n.toString()}">
     <div class="buttonGroup">
         <button id="myButton${n.toString()}" class="inputButton">Copy</button>
         <button id="myClearButton${n.toString()}" class="clearButton">Clear</button>
@@ -51,10 +51,6 @@ function addField(n) {
 function copyField(n) {
     // Get the text field
     const copyText = document.getElementById("myInput" + n.toString());
-
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
 
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
