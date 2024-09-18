@@ -1,0 +1,62 @@
+:root {
+
+}
+
+
+
+#app {
+  width: 100vw;
+}
+
+body {
+  background-color: #6f7886;
+}
+
+#fields {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1rem;
+  width: 800px;
+  margin: 10px 0 20px 25px;
+}
+
+.inputContainer {
+  width: 100%;
+}
+
+input, button {
+  height: 50px;
+}
+
+input {
+  background-color: #a7daa7;
+  padding: 10px 0 10px 10px;
+  font-weight: bold;
+  font-family: "Calibri", "sans-serif";
+  font-size: 18px;
+  margin: 15px 0 15px 0;
+  color: #4e8386;
+  width: 98%;
+}
+
+button {
+  background-color: #9b72a6;
+}
+
+.buttonGroup {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  width: 100%;
+}
+
+#controls {
+  margin-left: 25px;
+  margin-bottom: 25px;
+  display: grid;
+  justify-items: right;
+  width: 800px;
+}
+
+
+

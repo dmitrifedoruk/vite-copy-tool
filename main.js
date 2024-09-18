@@ -1,0 +1,84 @@
+import './style.css'
+import javascriptLogo from './javascript.svg'
+import viteLogo from '/vite.svg'
+// import { setupCounter } from './counter.js'
+
+document.querySelector('#app').innerHTML = `
+<div id="fields"></div>
+<div id="controls">
+    <button id="addButton">Add Field</button>
+</div>
+`
+
+// setupCounter(document.querySelector('#counter'))
+
+
+let count = 0;
+
+for(let i = 1; i < 4; i++){
+    addField(i);
+}
+
+for(let i = 1; i < 4; i++){
+    document.querySelector("#myButton" + i.toString()).addEventListener('click',() => copyField(i));
+    document.querySelector("#myClearButton" + i.toString()).addEventListener('click',() => clearField(i));
+}
+
+document.querySelector("#addButton").addEventListener('click',() => {
+        const n = count + 1;
+        addField(n);
+        document.querySelector("#myButton" + n.toString()).addEventListener('click', () => copyField(n));
+        document.querySelector("#myClearButton" + n.toString()).addEventListener('click', () => clearField(n));
+        count++;
+    }
+);
+
+
+
+function addField(n) {
+
+    const newDiv = document.createElement('div');
+    newDiv.classList.add("inputContainer");
+    newDiv.innerHTML =
+        `    <input type="text" value="Hello World" id="myInput${n.toString()}">
+    <div class="buttonGroup">
+        <button id="myButton${n.toString()}" class="inputButton">Copy</button>
+        <button id="myClearButton${n.toString()}" class="clearButton">Clear</button>
+    </div>`;
+
+    document.getElementById("fields").append(newDiv);
+
+    count++;
+
+    // document.querySelector("#myButton" + n.toString()).addEventListener('click',() => copyField(n));
+    // document.querySelector("#myClearButton" + n.toString()).addEventListener('click',() => clearField(n));
+}
+
+function copyField(n) {
+    // Get the text field
+    const copyText = document.getElementById("myInput" + n.toString());
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+}
+
+function clearField(n) {
+    // Get the text field
+    document.getElementById("myInput" + n.toString()).value = "";
+}
+
+const currentDate = new Date();
+document.querySelector("#myInput1").value = "07060131";
+document.querySelector("#myInput2").value = "Inspected 2nd shift, "+currentDate.toLocaleDateString();
+
+// document.querySelector("#myButton1").addEventListener('click',() => copyField());
+// document.querySelector("#myButton2").addEventListener('click',() => copyField());
+// document.querySelector("#myButton3").addEventListener('click',() => copyField());
+
+// const buttons = document.querySelectorAll(".inputButton");
+// buttons.forEach(e => e.addEventListener('click',(e) => copyField(e)))
+
