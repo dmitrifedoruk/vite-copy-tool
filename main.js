@@ -1,7 +1,4 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
 <div id="fields"></div>
@@ -10,7 +7,6 @@ document.querySelector('#app').innerHTML = `
 </div>
 `
 
-// setupCounter(document.querySelector('#counter'))
 
 
 let count = 0;
@@ -50,8 +46,6 @@ function addField(n) {
 
     count++;
 
-    // document.querySelector("#myButton" + n.toString()).addEventListener('click',() => copyField(n));
-    // document.querySelector("#myClearButton" + n.toString()).addEventListener('click',() => clearField(n));
 }
 
 function copyField(n) {
@@ -75,10 +69,4 @@ const currentDate = new Date();
 document.querySelector("#myInput1").value = "07060131";
 document.querySelector("#myInput2").value = "Inspected 2nd shift, "+currentDate.toLocaleDateString();
 
-// document.querySelector("#myButton1").addEventListener('click',() => copyField());
-// document.querySelector("#myButton2").addEventListener('click',() => copyField());
-// document.querySelector("#myButton3").addEventListener('click',() => copyField());
-
-// const buttons = document.querySelectorAll(".inputButton");
-// buttons.forEach(e => e.addEventListener('click',(e) => copyField(e)))
 
