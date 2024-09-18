@@ -65,8 +65,4 @@ function clearField(n) {
     document.getElementById("myInput" + n.toString()).value = "";
 }
 
-const currentDate = new Date();
-document.querySelector("#myInput1").value = "07060131";
-document.querySelector("#myInput2").value = "Inspected 2nd shift, "+currentDate.toLocaleDateString();
-
 
