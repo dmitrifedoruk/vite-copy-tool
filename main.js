@@ -17,6 +17,7 @@ for(let i = 1; i < 4; i++){
 
 for(let i = 1; i < 4; i++){
     document.querySelector("#myButton" + i.toString()).addEventListener('click',() => copyField(i));
+    document.querySelector("#myPasteButton" + i.toString()).addEventListener('click',() => pasteField(i));
     document.querySelector("#myClearButton" + i.toString()).addEventListener('click',() => clearField(i));
 }
 
@@ -39,6 +40,7 @@ function addField(n) {
         `    <input type="text" placeholder="Hello World" id="myInput${n.toString()}">
     <div class="buttonGroup">
         <button id="myButton${n.toString()}" class="inputButton">Copy</button>
+        <button id="myPasteButton${n.toString()}" class="pasteButton">Paste</button>
         <button id="myClearButton${n.toString()}" class="clearButton">Clear</button>
     </div>`;
 
@@ -54,6 +56,13 @@ function copyField(n) {
 
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);
+}
+
+function pasteField(n) {
+    // Get the text field
+    const fieldToPaste = document.getElementById("myInput" + n.toString());
+    const pasteText = navigator.clipboard.readText()
+        .then((clipText) => (fieldToPaste.value = clipText));
 }
 
 function clearField(n) {
